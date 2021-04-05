@@ -1,0 +1,36 @@
+.footer {
+	background-color: #262424;
+	@include flex;
+	@include flex-direction(column);
+    @include justify-content(flex-end);
+	height: 200px;
+	&__social {
+		@include flex;
+		@include justify-content(center);
+		@include align-items(center);
+	}
+	&__social-item {
+		@include margin(0 11.98% 0 0);
+	}
+	&__social-item:last-child{
+		@include margin (0 0);
+	}
+	&__social-img{
+		@include margin(0px 20px 0px 0px);
+	}
+
+	&__social-text, &__social-img{
+        vertical-align: middle;
+	}
+	&__social-text {
+		text-transform: uppercase;
+		@include font (1,#fefefe, 500,normal,normal,'Montserrat', Arial,  sans-serif);
+	}
+	&__right{
+		text-transform: uppercase;
+		@include font (1,#fefefe, 500,normal,normal,'Montserrat', Arial,  sans-serif);
+		text-align: center;
+		@include margin(40px 0 25px 0);
+	}
+}
+

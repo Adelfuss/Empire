@@ -1,0 +1,30 @@
+.galary {
+	@include flex;
+	width: $full-w;
+	@include flex-wrap(wrap);
+	&__column{
+		width: responsiveWidth(640,'%');
+		@include flex;
+		@include flex-wrap(wrap);
+	}
+	&__img{
+		width:$full-w;
+		height: auto;
+	}
+}
+.purchase {
+	@include flex;
+	height: 200px;
+	background-color: #6fd5ad;
+	@include align-items(center);
+	@include justify-content(center);
+	&__text {
+		text-transform: uppercase;
+		@include font(1.5, #fefefe, 500,normal,normal,'Montserrat', Arial,  sans-serif);
+	}
+}
+
+
+
+
+

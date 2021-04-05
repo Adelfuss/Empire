@@ -1,0 +1,21 @@
+html,body {
+	width: $full-w;
+	height: $full-h;
+}
+.wrapper {
+	min-height: $full-h;
+
+	@include flex;
+	@include flex-direction (column);
+	@include flex-basis();
+
+}
+.container {
+	max-width: $maxWidth;
+	@include margin (0 auto);
+}
+
+
+
+
+

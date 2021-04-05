@@ -1,0 +1,63 @@
+.header {
+	position: relative;
+	&__img {
+		width: $full-w;
+		height: auto;
+		display: block;
+	}
+}
+.welcome {
+	height: $full-h;
+	width: $full-w;
+	@include flex;
+    @include justify-content(center);
+    @include align-items(center);
+    @include position(absolute, 0,0);
+
+	&__wrapper {
+		text-align: center;
+        @include flex;
+        @include flex-direction(column);
+	}
+    &__wel {
+        @include font(2.25, #fefefe, 300, normal, 3.6px, 'Montserrat' , Arial , sans-serif );
+    	margin-bottom: 30px;
+    }
+    &__empire {
+    	text-transform: uppercase;
+        @include font(3.375, #fefefe, 700, normal,normal, 'Montserrat', Arial,  sans-serif );
+    	margin-bottom: 30px;
+    }
+    &__phrase {
+        @include font(1, #fefefe, 500, normal,normal, 'Montserrat', Arial,  sans-serif );
+    	margin-bottom: 40px;
+    }
+    &__button {
+    	border-radius: 90px;
+    	border:2px solid #fefefe;
+    	display: inline-block;
+    }
+    &__button-text {
+        @include font(1, #fefefe, 500, normal,normal, 'Montserrat', Arial,  sans-serif );
+    	text-transform: uppercase;
+        @include padding(19px  15px);
+    }
+}
+.menu {
+    @include position(absolute, $top:5.2vw, $left:19.53vw);
+	&__img {
+		width: responsiveWidth(35,vw);
+		height: auto;
+	}
+}
+.logo {
+    @include position(absolute, $top:5.2vw, $right:19.53vw);
+	&__img {
+		width: responsiveWidth(40,vw);
+		height: auto;
+	}
+}
+
+
+
+// При позиціонувванні елемента, можна вказувати width, height 100%, навіть якщо у батьківського елемента явно не задані розміри ширини та довжини.

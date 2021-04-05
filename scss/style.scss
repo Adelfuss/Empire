@@ -1,0 +1,129 @@
+$full-w:100%;
+$full-h:100%;
+$fontBase:16px;
+$maxWidth:1170px;
+
+@mixin margin($params...){
+     margin:$params;
+}
+@mixin padding($params...){
+   padding: $params;
+}
+@mixin position($position, $left:auto, $top:auto, $right:auto, $bottom:auto){
+     position: $position;
+     left:$left;
+     top:$top;
+     right: $right;
+     bottom: $bottom;
+}
+@mixin font($font-multiple,$color,$font-weight,$font-style,$letter-spacing:normal,$font-family...){
+    font-family: $font-family;
+    font-size:($fontBase * $font-multiple);
+    color:$color;
+    font-weight:$font-weight;
+    font-style:$font-style;
+    letter-spacing:$letter-spacing;
+}
+@mixin flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+@mixin flex-direction ($direction: row) {
+   @if $direction == column {
+     -webkit-box-orient: vertical;
+     -webkit-box-direction: normal;
+     -ms-flex-direction: column;
+     flex-direction: column;
+   }
+   @else {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+     flex-direction: row;
+   }
+}
+@mixin flex-basis ($basis:auto) {
+    -ms-flex-preferred-size: $basis;
+    flex-basis: $basis;
+}
+@mixin justify-content ($justify:flex-start) {
+    @if $justify == flex-end {
+       -webkit-box-pack:end;
+       -ms-flex-pack:end;
+       justify-content:$justify;
+    }
+    @else if $justify == flex-start {
+         -webkit-box-pack:start;
+         -ms-flex-pack:start;
+          justify-content:$justify;
+    }
+    @else if $justify == center {
+        -webkit-box-pack:$justify;
+        -ms-flex-pack:$justify;
+        justify-content:$justify;
+    }
+    @else if $justify == space-between {
+         -webkit-box-pack:justify;
+         -ms-flex-pack:justify;
+         justify-content:$justify;
+    }
+    @else if $justify == space-around {
+        -ms-flex-pack:distribute;
+        justify-content:$justify;
+    }
+    @else if $justify == space-evenly {
+        -webkit-box-pack:$justify;
+        -ms-flex-pack:$justify;
+        justify-content:$justify;
+    }
+}
+@mixin align-items ($align:stretch) {
+    @if $align == flex-start {
+         -webkit-box-align:start;
+         -ms-flex-align:start;
+          align-items:$align;
+    }
+    @else if $align == flex-end {
+        -webkit-box-align:end;
+        -ms-flex-align:end;
+        align-items:$align ;
+    }
+    @else if $align == center {
+        -webkit-box-align:$align;
+        -ms-flex-align:$align;
+        align-items:$align;
+    }
+    @else if $align == baseline {
+         -webkit-box-align:$align;
+        -ms-flex-align:$align;
+        align-items:$align;
+    }
+    @else {
+        -webkit-box-align:$align;
+        -ms-flex-align:$align;
+        align-items:$align;
+    }
+}
+@mixin flex-wrap ($wrap:nowrap){
+    -ms-flex-wrap:$wrap;
+    flex-wrap:$wrap;
+}
+@function responsiveWidth ($width, $measure){
+    @if $width != 640 {
+        $width :round(($width / 1920)*100);
+        @return $width + #{$measure};
+    }
+    $width:($width / 1920) * 100;
+    @return $width + #{$measure};
+}
+
+
+
+@import "base/normalize";
+@import "base/base";
+@import "header/header";
+@import "content/main";
+@import "footer/footer";
+@import "media_queries/media_queries";
+
